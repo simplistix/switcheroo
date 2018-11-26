@@ -1,0 +1,20 @@
+group: travis_latest
+dist: xenial
+sudo: true
+cache:
+  directories:
+    - $HOME/.cache/pip
+
+language: python
+
+python:
+  - "2.7"
+  - "3.6"
+  - "3.7"
+
+install:
+- "curl -sSL https://raw.githubusercontent.com/sdispater/poetry/master/get-poetry.py | python"
+- "source $HOME/.poetry/env"
+- "poetry install"
+
+script: pytest
