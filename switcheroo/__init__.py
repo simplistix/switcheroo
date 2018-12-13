@@ -28,6 +28,14 @@ def __getitem__(self, item):
         return _default
 
 
+def register_decorated_handler(name, obj, type_, switch):
+    case = getattr(obj, '__switcheroo__', None)
+    if case:
+        setattr(type_, name, staticmethod(obj))
+        method = getattr(type_, name)
+        switch.register(case, method)
+
+
 class SwitchMeta(type):
 
     __getitem__ = __getitem__
@@ -37,11 +45,11 @@ class SwitchMeta(type):
         if name != 'Switch':
             switch = Switch()
             for name, unbound in attrs.items():
-                case = getattr(unbound, '__switcheroo__', None)
-                if case:
-                    setattr(type_, name, staticmethod(unbound))
-                    method = getattr(type_, name)
-                    switch.register(case, method)
+                register_decorated_handler(name, unbound, type_, switch)
+            for base in bases:
+                for name in dir(base):
+                    obj = getattr(base, name)
+                    register_decorated_handler(name, obj, type_, switch)
             type_.mapping = switch.mapping
         return type_
 

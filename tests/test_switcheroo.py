@@ -44,3 +44,25 @@ def test_subclass_no_dupes():
 
             @handles('foo')
             def handles_2(self, x): pass
+
+
+def test_subclass_of_subclass():
+    class BaseSwitch(Switch):
+
+        @handles('foo')
+        def handler_1(x):
+            return x+1
+
+    class MySwitch(BaseSwitch):
+
+        @handles('bar')
+        def handler_2(x):
+            return x
+
+        @default
+        def the_rest(x):
+            return x-1
+
+    compare(MySwitch['foo'](1), expected=2)
+    compare(MySwitch['bar'](1), expected=1)
+    compare(MySwitch['baz'](1), expected=0)
