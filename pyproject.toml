@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "switcheroo"
-version = "0.1.0"
+version = "0.2.0"
 description = "Efficient dispatch-based calling, that might be a switch statement in another language."
 authors = ["Chris Withers <chris@withers.org>"]
 license = "MIT"
