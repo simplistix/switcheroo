@@ -1,7 +1,7 @@
 version: 2.1
 
 orbs:
-  python: cjw296/python-ci@1
+  python: cjw296/python-ci@1.0.2
 
 common: &common
   jobs:
