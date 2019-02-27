@@ -7,11 +7,13 @@ def test_no_dupes():
     switch = Switch()
 
     @switch.handles('foo')
-    def handle_foo(x): pass
+    def handle_foo(x):
+        pass
 
     with ShouldRaise(KeyError):
         @switch.handles('foo')
-        def handle_others(x): pass
+        def handle_others(x):
+            pass
 
 
 def test_subclass():
@@ -40,10 +42,12 @@ def test_subclass_no_dupes():
         class MySwitch(Switch):
 
             @handles('foo')
-            def handles_1(self, x): pass
+            def handles_1(self, x):
+                pass
 
             @handles('foo')
-            def handles_2(self, x): pass
+            def handles_2(self, x):
+                pass
 
 
 def test_subclass_of_subclass():
