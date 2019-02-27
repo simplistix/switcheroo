@@ -120,6 +120,11 @@ subclass usage
 changes
 ~~~~~~~
 
+1.0.0 (27 Feb 2019)
+-------------------
+
+- 100% coverage checking and automated releases.
+
 0.2.0 (13 Dec 2018)
 -------------------
 
