@@ -13,6 +13,7 @@ six = "^1.11"
 
 [tool.poetry.dev-dependencies]
 pytest = "^3.0"
+pytest-cov = "^2.6"
 sybil = "^1.0"
 testfixtures = "^6.3"
 
