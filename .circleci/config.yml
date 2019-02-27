@@ -1,0 +1,50 @@
+version: 2.1
+
+orbs:
+  python: cjw296/python-ci@1
+
+command: &command
+  command: poetry run pytest --cov switcheroo --cov tests
+
+common: &common
+  jobs:
+
+    - python/poetry-run-tests:
+        name: python27
+        image: circleci/python:2.7
+        <<: *command
+    - python/poetry-run-tests:
+        name: python36
+        image: circleci/python:3.6
+        <<: *command
+    - python/poetry-run-tests:
+        name: python37
+        image: circleci/python:3.7
+        <<: *command
+
+    - python/coverage:
+        name: coverage
+        requires:
+          - python27
+          - python36
+          - python37
+
+    - python/release:
+        name: release
+        requires:
+          - coverage
+        filters:
+          branches:
+            only: master
+
+workflows:
+  push:
+    <<: *common
+  periodic:
+    <<: *common
+    triggers:
+      - schedule:
+          cron: "0 0 * * 4"
+          filters:
+            branches:
+              only: master

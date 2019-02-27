@@ -1,7 +1,7 @@
-|Travis|_
+|CircleCI|_
 
-.. |Travis| image:: https://api.travis-ci.org/cjw296/switcheroo.svg?branch=master
-.. _Travis: https://travis-ci.org/cjw296/switcheroo
+.. |CircleCI| image:: https://circleci.com/gh/cjw296/switcheroo/tree/master.svg?style=shield
+.. _CircleCI: https://circleci.com/gh/cjw296/switcheroo/tree/master
 
 Switcheroo
 ==========
