@@ -115,3 +115,17 @@ subclass usage
 2
 >>> MySwitch['bar'](1)
 0
+
+
+changes
+~~~~~~~
+
+0.2.0 (13 Dec 2018)
+-------------------
+
+- Handle subclasses when using the subclass pattern.
+
+0.1.0 (24 Nov 2018)
+-------------------
+
+- Initial release.
