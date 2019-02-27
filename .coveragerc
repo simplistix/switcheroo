@@ -1,0 +1,6 @@
+[run]
+source = switcheroo,tests
+
+[report]
+exclude_lines =
+  pass

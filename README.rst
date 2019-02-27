@@ -1,7 +1,7 @@
-|Travis|_
+|CircleCI|_
 
-.. |Travis| image:: https://api.travis-ci.org/cjw296/switcheroo.svg?branch=master
-.. _Travis: https://travis-ci.org/cjw296/switcheroo
+.. |CircleCI| image:: https://circleci.com/gh/cjw296/switcheroo/tree/master.svg?style=shield
+.. _CircleCI: https://circleci.com/gh/cjw296/switcheroo/tree/master
 
 Switcheroo
 ==========
@@ -115,3 +115,22 @@ subclass usage
 2
 >>> MySwitch['bar'](1)
 0
+
+
+changes
+~~~~~~~
+
+1.0.0 (27 Feb 2019)
+-------------------
+
+- 100% coverage checking and automated releases.
+
+0.2.0 (13 Dec 2018)
+-------------------
+
+- Handle subclasses when using the subclass pattern.
+
+0.1.0 (24 Nov 2018)
+-------------------
+
+- Initial release.
