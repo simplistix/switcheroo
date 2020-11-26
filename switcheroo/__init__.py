@@ -18,7 +18,7 @@ class handles(object):
         return handler
 
 
-def __getitem__(self, item):
+def lookup(self, item):
     try:
         return self.mapping[item]
     except KeyError:
@@ -38,7 +38,7 @@ def register_decorated_handler(name, obj, type_, switch):
 
 class SwitchMeta(type):
 
-    __getitem__ = __getitem__
+    __getitem__ = lookup
 
     def __new__(cls, name, bases, attrs):
         type_ = type.__new__(cls, name, bases, attrs)
@@ -60,7 +60,7 @@ class Switch(object):
     def __init__(self, mapping=None):
         self.mapping = mapping or {}
 
-    __getitem__ = __getitem__
+    __getitem__ = lookup = lookup
 
     def register(self, case, handler):
         if case in self.mapping:

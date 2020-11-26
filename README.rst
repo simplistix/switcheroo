@@ -42,6 +42,29 @@ KeyError: 'bar'
 >>> switch['bar'](1)
 0
 
+explicit usage
+~~~~~~~~~~~~~~
+
+.. code-block:: python
+
+    from switcheroo import Switch
+
+    def handle_foo(x):
+        return x+1
+
+    def handle_others(x):
+        return x-1
+
+    switch = Switch()
+    switch.register('foo', handler=handle_foo)
+    switch.default(handle_others)
+
+>>> switch.lookup('foo')(1)
+2
+
+>>> switch.lookup('bar')(1)
+0
+
 decorator usage
 ~~~~~~~~~~~~~~~
 
