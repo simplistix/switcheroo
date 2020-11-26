@@ -62,16 +62,22 @@ class Switch(object):
 
     __getitem__ = lookup = lookup
 
-    def register(self, case, handler):
-        if case in self.mapping:
+    def register(self, case, handler, force=False):
+        if case in self.mapping and not force:
             raise KeyError('{!r} already handled by {!r}'.format(
                 case, self.mapping[case]
             ))
         self.mapping[case] = handler
         return handler
 
+    def override(self, case, handler):
+        self.register(case, handler, force=True)
+
     def handles(self, case):
         return partial(self.register, case)
+
+    def overrides(self, case):
+        return partial(self.register, case, force=True)
 
     @property
     def default(self):

@@ -65,6 +65,10 @@ explicit usage
 >>> switch.lookup('bar')(1)
 0
 
+>>> switch.override('foo', lambda x: x+2)
+>>> switch.lookup('foo')(1)
+3
+
 decorator usage
 ~~~~~~~~~~~~~~~
 
@@ -87,6 +91,15 @@ decorator usage
 
 >>> switch['bar'](1)
 0
+
+.. code-block:: python
+
+    @switch.overrides('foo')
+    def new_handle_foo(x):
+        return x+2
+
+>>> switch['foo'](1)
+3
 
 class helper usage
 ~~~~~~~~~~~~~~~~~~
