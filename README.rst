@@ -156,6 +156,13 @@ subclass usage
 changes
 ~~~~~~~
 
+1.1.0 (26 Nov 2020)
+-------------------
+
+- Add support for overrides.
+
+- Add support for more explicit usage.
+
 1.0.0 (27 Feb 2019)
 -------------------
 
