@@ -5,7 +5,7 @@ description = "Efficient dispatch-based calling, that might be a switch statemen
 authors = ["Chris Withers <chris@withers.org>"]
 license = "MIT"
 readme = "README.rst"
-repository = "https://github.com/cjw296/switcheroo"
+repository = "https://github.com/simplistix/switcheroo"
 
 [tool.poetry.dependencies]
 python = "~2.7 || ^3.6"
