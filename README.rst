@@ -1,7 +1,7 @@
 |CircleCI|_
 
-.. |CircleCI| image:: https://circleci.com/gh/cjw296/switcheroo/tree/master.svg?style=shield
-.. _CircleCI: https://circleci.com/gh/cjw296/switcheroo/tree/master
+.. |CircleCI| image:: https://circleci.com/gh/simplistix/switcheroo/tree/master.svg?style=shield
+.. _CircleCI: https://circleci.com/gh/simplistix/switcheroo/tree/master
 
 Switcheroo
 ==========
