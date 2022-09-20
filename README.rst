@@ -156,6 +156,11 @@ subclass usage
 changes
 ~~~~~~~
 
+2.0.0 (20 Sep 2022)
+-------------------
+
+- Drop Python 2 support.
+
 1.1.0 (26 Nov 2020)
 -------------------
 
