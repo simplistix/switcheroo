@@ -1,14 +1,11 @@
 from functools import partial
 
-from six import add_metaclass
-
-
 def default(handler):
     handler.__switcheroo__ = default
     return handler
 
 
-class handles(object):
+class handles:
 
     def __init__(self, case):
         self.case = case
@@ -54,8 +51,7 @@ class SwitchMeta(type):
         return type_
 
 
-@add_metaclass(SwitchMeta)
-class Switch(object):
+class Switch(metaclass=SwitchMeta):
 
     def __init__(self, mapping=None):
         self.mapping = mapping or {}
