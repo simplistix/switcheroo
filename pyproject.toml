@@ -8,14 +8,14 @@ readme = "README.rst"
 repository = "https://github.com/simplistix/switcheroo"
 
 [tool.poetry.dependencies]
-python = "~2.7 || ^3.6"
+python = "^3.6"
 six = "^1.11"
 
 [tool.poetry.dev-dependencies]
-pytest = "^3.0"
-pytest-cov = "^2.6"
-sybil = "^1.0"
-testfixtures = "^6.3"
+pytest = "*"
+pytest-cov = "*"
+sybil = "*"
+testfixtures = "*"
 
 [tool.carthorse]
 version-from = "poetry"
