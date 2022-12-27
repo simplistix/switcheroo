@@ -28,7 +28,7 @@ setup(
         'test': [
             'pytest',
             'pytest-cov',
-            'sybil',
+            'sybil>=4',
             'testfixtures'
         ],
         'build': [
