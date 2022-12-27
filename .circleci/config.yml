@@ -5,7 +5,7 @@ orbs:
 
 common: &common
   jobs:
-    - python/poetry-run-tests:
+    - python/pip-run-tests:
         matrix:
           parameters:
             image:
@@ -15,10 +15,11 @@ common: &common
     - python/coverage:
         name: coverage
         requires:
-          - python/poetry-run-tests
+          - python/pip-run-tests
 
     - python/release:
         name: release
+        config: .carthorse.yml
         requires:
           - coverage
         filters:
